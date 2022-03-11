@@ -17,6 +17,14 @@ public class AttendanceService {
     private final AttendanceRepository attendanceRepository;
     private final ModelMapper modelMapper;
 
+    public Attendance add(AttendanceDto attendanceDto) {
+        Attendance attendance = new Attendance();
+        attendance.setStudentId(attendanceDto.getStudentId());
+        attendance.setArrivalTime(attendanceDto.getArrivalTime());
+        attendance.setDepartureTime(attendanceDto.getDepartureTime());
+        return attendanceRepository.save(attendance);
+    }
+
     public List<Attendance> addAll(List<AttendanceDto> list) {
         try {
             List<Attendance> attendances = new ArrayList<>();

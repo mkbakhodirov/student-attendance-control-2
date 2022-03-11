@@ -18,6 +18,7 @@ import java.time.LocalDateTime;
 @Entity
 public class Attendance {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private LocalDateTime arrivalTime;
     private LocalDateTime departureTime;
