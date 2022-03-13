@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -18,9 +19,12 @@ import java.time.LocalDateTime;
 @Entity
 public class Attendance {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private String id;
     private LocalDateTime arrivalTime;
     private LocalDateTime departureTime;
-    private Integer studentId;
+    private String studentId;
+
+    {
+        id = UUID.randomUUID().toString();
+    }
 }

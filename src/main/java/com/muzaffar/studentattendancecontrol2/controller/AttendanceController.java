@@ -37,7 +37,7 @@ public class AttendanceController {
 
     @PostMapping
     public ResponseEntity<?> add(@RequestBody AttendanceDto attendanceDto) {
-        Integer attendanceId = attendanceService.add(attendanceDto).getId();
+        String attendanceId = attendanceService.add(attendanceDto).getId();
         URI uri =
                 ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
                         .buildAndExpand(attendanceId).toUri();

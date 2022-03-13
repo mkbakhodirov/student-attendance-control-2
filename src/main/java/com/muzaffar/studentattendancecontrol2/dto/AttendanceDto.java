@@ -11,5 +11,5 @@ public class AttendanceDto {
     private LocalDateTime arrivalTime;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime departureTime;
-    private Integer studentId;
+    private String studentId;
 }
